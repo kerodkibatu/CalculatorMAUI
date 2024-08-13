@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:vm="clr-namespace:CalculatorMAUI.ViewModels"
+			 x:Class="CalculatorMAUI.Views.MainPage"
+			 x:DataType="vm:MainViewModel">
+    <Grid RowDefinitions="Auto,*">
+        <VerticalStackLayout>
+            <Entry HorizontalOptions="End" FontSize="90" Text="{Binding Display}"  Keyboard="Numeric" IsReadOnly="True" FontAutoScalingEnabled="True"/>
+        </VerticalStackLayout>
+
+        <Grid Grid.Row="1" RowDefinitions="*,*,*,*,*" ColumnDefinitions="*,*,*,*" Padding="10" ColumnSpacing="10" RowSpacing="10">
+
+            <Button Text="C" FontSize="64" Grid.Row="0" Grid.Column="0" Command="{Binding ClearCommand}" BackgroundColor="MediumPurple"/>
+            <Button Text="(" FontSize="64" Grid.Row="0" Grid.Column="1" Command="{Binding OperatorPressCommand}" CommandParameter="(" BackgroundColor="MediumPurple"/>
+            <Button Text=")" FontSize="64" Grid.Row="0" Grid.Column="2" Command="{Binding OperatorPressCommand}" CommandParameter=")" BackgroundColor="MediumPurple"/>
+
+            <Button Text="7" FontSize="64" Grid.Row="1" Grid.Column="0" Command="{Binding DigitPressCommand}" CommandParameter="7"/>
+            <Button Text="8" FontSize="64" Grid.Row="1" Grid.Column="1" Command="{Binding DigitPressCommand}" CommandParameter="8"/>
+            <Button Text="9" FontSize="64" Grid.Row="1" Grid.Column="2" Command="{Binding DigitPressCommand}" CommandParameter="9"/>
+
+            <Button Text="4" FontSize="64" Grid.Row="2" Grid.Column="0" Command="{Binding DigitPressCommand}" CommandParameter="4"/>
+            <Button Text="5" FontSize="64" Grid.Row="2" Grid.Column="1" Command="{Binding DigitPressCommand}" CommandParameter="5"/>
+            <Button Text="6" FontSize="64" Grid.Row="2" Grid.Column="2" Command="{Binding DigitPressCommand}" CommandParameter="6"/>
+
+            <Button Text="1" FontSize="64" Grid.Row="3" Grid.Column="0" Command="{Binding DigitPressCommand}" CommandParameter="1"/>
+            <Button Text="2" FontSize="64" Grid.Row="3" Grid.Column="1" Command="{Binding DigitPressCommand}" CommandParameter="2"/>
+            <Button Text="3" FontSize="64" Grid.Row="3" Grid.Column="2" Command="{Binding DigitPressCommand}" CommandParameter="3"/>
+
+            <Button Text="±" FontSize="64" Grid.Row="4" Grid.Column="0" Command="{Binding NegateCommand}" BackgroundColor="MediumPurple"/>
+            <Button Text="0" FontSize="64" Grid.Row="4" Grid.Column="1" Command="{Binding DigitPressCommand}" CommandParameter="0"/>
+            <Button Text="." FontSize="64" Grid.Row="4" Grid.Column="2" Command="{Binding DigitPressCommand}" CommandParameter="." BackgroundColor="MediumPurple"/>
+            <Button Text="=" FontSize="64" Grid.Row="4" Grid.Column="3" Command="{Binding OperatorPressCommand}" CommandParameter="=" BackgroundColor="Purple" TextColor="Wheat"/>
+
+            <Button Text="+" FontSize="64" Grid.Row="3" Grid.Column="3" Command="{Binding OperatorPressCommand}" CommandParameter="+" BackgroundColor="MediumPurple"/>
+            <Button Text="-" FontSize="64" Grid.Row="2" Grid.Column="3" Command="{Binding OperatorPressCommand}" CommandParameter="-" BackgroundColor="MediumPurple"/>
+            <Button Text="/" FontSize="64" Grid.Row="1" Grid.Column="3" Command="{Binding OperatorPressCommand}" CommandParameter="/" BackgroundColor="MediumPurple"/>
+            <Button Text="*" FontSize="64" Grid.Row="0" Grid.Column="3" Command="{Binding OperatorPressCommand}" CommandParameter="*" BackgroundColor="MediumPurple"/>
+
+        </Grid>
+    </Grid>
+</ContentPage>
