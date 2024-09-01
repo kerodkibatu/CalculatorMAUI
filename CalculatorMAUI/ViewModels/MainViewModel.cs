@@ -12,6 +12,7 @@ public partial class MainViewModel : BaseViewModel
     [RelayCommand]
     void OnDigitPress(string digit)
     {
+        Console.WriteLine(digit);
         // If the display is 0, replace it with the digit
         if (Display == "0")
         {
@@ -22,6 +23,10 @@ public partial class MainViewModel : BaseViewModel
             // Otherwise, append the digit to the display
             Display += digit;
         }
+        if (Display.Contains("Error")) {
+            Display = digit;
+        }
+        Console.WriteLine("asasasasa",Display);
     }
     // This Command is called when the Clear button is pressed
     // It resets the display to 0, Effectively clearing the current expression
