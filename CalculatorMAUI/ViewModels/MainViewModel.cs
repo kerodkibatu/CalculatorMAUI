@@ -26,7 +26,6 @@ public partial class MainViewModel : BaseViewModel
         if (Display.Contains("Error")) {
             Display = digit;
         }
-        Console.WriteLine("asasasasa",Display);
     }
     // This Command is called when the Clear button is pressed
     // It resets the display to 0, Effectively clearing the current expression
